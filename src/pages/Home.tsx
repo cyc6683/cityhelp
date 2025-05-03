@@ -28,38 +28,46 @@ const Home = () => {
         </div>
 
         <div className="flex flex-row justify-center gap-4 sm:gap-8 my-8">
-          <div className="bg-white p-3 rounded-xl hover:scale-105 transitionl">
+          <div className="bg-white p-3 rounded-xl hover:scale-105 active:scale-95 transition duration-150">
             <FiPhone className="text-black text-xl " />
           </div>
-          <div className="bg-white p-3 rounded-xl hover:scale-105 transition">
+          <div className="bg-white p-3 rounded-xl hover:scale-105 active:scale-95 transition duration-150">
             <FiMessageSquare className="text-black text-xl" />
           </div>
-          <div className="bg-white p-3 rounded-xl hover:scale-105 transition">
+          <div className="bg-white p-3 rounded-xl hover:scale-105 active:scale-95 transition duration-150">
             <FiVideo className="text-black text-xl" />
           </div>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-          <ServiceCard
-            icon={<FiZap />}
-            label="Report Electricity Outage"
-            link="/report"
-          />
-          <ServiceCard
-            icon={<FiDroplet />}
-            label="Report Water Outage"
-            link="/report"
-          />
-          <ServiceCard
-            icon={<FiClock />}
-            label="Planned Outage"
-            link="/upcomming"
-          />
-          <ServiceCard
-            icon={<FiHelpCircle />}
-            label="Need Any Help"
-            link="/help"
-          />
+          <div className="hover:scale-105 active:scale-95 transition duration-150">
+            <ServiceCard
+              icon={<FiZap />}
+              label="Report Electricity Outage"
+              link="/report"
+            />
+          </div>
+          <div className="hover:scale-105 active:scale-95 transition duration-150">
+            <ServiceCard
+              icon={<FiDroplet />}
+              label="Report Water Outage"
+              link="/report"
+            />
+          </div>
+          <div className="hover:scale-105 active:scale-95 transition duration-150">
+            <ServiceCard
+              icon={<FiClock />}
+              label="Planned Outage"
+              link="/upcomming"
+            />
+          </div>
+          <div className="hover:scale-105 active:scale-95 transition duration-150">
+            <ServiceCard
+              icon={<FiHelpCircle />}
+              label="Need Any Help"
+              link="/help"
+            />
+          </div>
         </div>
       </main>
     </div>
