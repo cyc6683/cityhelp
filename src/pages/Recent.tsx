@@ -148,10 +148,10 @@ const Recent = () => {
         </div>
         <Link to="/upcomming" className="mt-10 flex justify-center">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <span className="text-indigo-600 font-semibold text-lg transition group-hover:underline">
+            <span className="text-indigo-600 font-semibold text-lg transition group-hover:underline group-active:underline">
               Planned Service Interruption
             </span>
-            <span className="text-indigo-600 text-xl transition-transform duration-300 group-hover:translate-x-2">
+            <span className="text-indigo-600 text-xl transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2">
               →
             </span>
           </div>

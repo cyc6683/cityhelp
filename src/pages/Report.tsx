@@ -118,7 +118,7 @@ const Report = () => {
             </div>
           </div>
 
-          <div className="md:col-span-2 flex justify-end mt-6">
+          <div className="md:col-span-2 flex justify-end mt-6 active:scale-95 transition duration-150">
             <button
               type="submit"
               className="bg-orange-400 hover:bg-orange-500 text-white font-semibold px-6 py-3 rounded-xl"

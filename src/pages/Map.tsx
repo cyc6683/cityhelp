@@ -79,7 +79,7 @@ const Map = () => {
         </GoogleMap>
         <button
           onClick={handleSubmit}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-orange-500 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-orange-600 text-sm sm:text-base"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-orange-500 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-orange-600 text-sm sm:text-base active:scale-95 transition duration-150"
         >
           Report Here
         </button>
