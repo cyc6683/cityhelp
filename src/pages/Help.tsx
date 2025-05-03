@@ -1,63 +1,77 @@
 // pages/Help.tsx
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const mockNeeds = {
-  pending: [
-    { title: "Need water delivery", time: "2025-05-01 09:30" },
-    { title: "Check electricity in my area", time: "2025-05-02 11:10" },
-  ],
-  progress: [{ title: "Pipe fix scheduled", time: "2025-04-29 14:20" }],
-  completed: [{ title: "Resolved: Light restored", time: "2025-04-26 08:00" }],
-};
-
 const Help = () => {
-  const [activeTab, setActiveTab] = useState<
-    "pending" | "progress" | "completed"
-  >("pending");
-
-  const tabs: { label: string; key: "pending" | "progress" | "completed" }[] = [
-    { label: "Needs", key: "pending" },
-    { label: "In Progress", key: "progress" },
-    { label: "Completed", key: "completed" },
-  ];
+  const navigate = useNavigate();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Your request has been submitted!");
+    navigate("/help-status");
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-indigo-50 pb-24">
       <Navbar />
-      <div className="max-w-4xl mx-auto p-8">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">Help & Needs</h1>
-          <button className="bg-orange-400 text-white px-4 py-2 rounded-xl font-medium hover:bg-orange-500">
-            + Add Request
-          </button>
-        </div>
-
-        <div className="flex space-x-4 mb-4">
-          {tabs.map((tab) => (
-            <button
-              key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
-              className={`px-4 py-2 rounded ${
-                activeTab === tab.key
-                  ? "bg-orange-400 text-white"
-                  : "bg-white text-gray-700 border"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="space-y-4">
-          {mockNeeds[activeTab].map((item, i) => (
-            <div key={i} className="bg-white p-4 rounded shadow">
-              <h3 className="font-semibold text-lg">{item.title}</h3>
-              <p className="text-sm text-gray-500">{item.time}</p>
+      <section className="max-w-3xl mx-auto px-6 py-16">
+        <div className="bg-white p-8 rounded-xl shadow-md">
+          <h1 className="text-3xl font-bold text-indigo-700 mb-4">
+            Need Help?
+          </h1>
+          <p className="text-gray-600 mb-8">
+            If you're experiencing an issue or need support, fill out the form
+            below and our team will get back to you as soon as possible.
+          </p>
+          <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              />
             </div>
-          ))}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="you@example.com"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Message
+              </label>
+              <textarea
+                rows={4}
+                placeholder="Describe your issue..."
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="bg-indigo-600 text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition"
+            >
+              Submit Request
+            </button>
+          </form>
         </div>
-      </div>
+      </section>
+      <Link to="/help-status" className="flex justify-center">
+        <div className="flex items-center gap-2 group cursor-pointer">
+          <span className="text-indigo-600 font-semibold text-lg transition group-hover:underline">
+            View My Requests
+          </span>
+          <span className="text-indigo-600 text-xl transition-transform duration-300 group-hover:translate-x-2">
+            →
+          </span>
+        </div>
+      </Link>
     </div>
   );
 };

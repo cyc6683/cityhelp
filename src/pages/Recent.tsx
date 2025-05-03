@@ -60,16 +60,19 @@ const Recent = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-4xl mx-auto p-8">
+      <div className="max-w-4xl mx-auto p-8 pb-16">
+        <p className="text-sm text-gray-500 mb-4">
+          Total Reports: {useReportStore((state) => state.reports.length) + 3}
+        </p>
         <div className="grid gap-4">
           {useReportStore((state) => state.reports).map((report, i) => (
             <div
               key={i}
               onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
               onDoubleClick={() => deleteReport(i)}
-              className="bg-white p-6 rounded-xl shadow-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
+              className="bg-white p-6 rounded-xl shadow-md"
             >
-              <div className="w-full flex justify-between items-center">
+              <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-1">
                     {report.description}
