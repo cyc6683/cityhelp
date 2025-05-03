@@ -14,7 +14,7 @@ import {
 
 const Home = () => {
   return (
-    <div className="h-screen bg-indigo-600 text-white">
+    <div className="min-h-screen bg-indigo-600 text-white">
       <Navbar />
       <main className="flex flex-col items-center text-center mt-12">
         <h1 className="text-5xl md:text-9xl font-protest font-extrabold mb-2">
