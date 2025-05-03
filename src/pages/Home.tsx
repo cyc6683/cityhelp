@@ -14,7 +14,7 @@ import {
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-indigo-600 text-white">
+    <div className="h-screen bg-indigo-600 text-white">
       <Navbar />
       <main className="flex flex-col items-center text-center mt-12">
         <h1 className="text-5xl md:text-9xl font-protest font-extrabold mb-2">
@@ -39,7 +39,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
           <ServiceCard
             icon={<FiZap />}
             label="Report Electricity Outage"
