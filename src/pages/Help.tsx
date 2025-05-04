@@ -1,5 +1,5 @@
 // pages/Help.tsx
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 const Help = () => {
@@ -7,7 +7,7 @@ const Help = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Your request has been submitted!");
-    navigate("/");
+    navigate("/help-status");
   };
 
   return (
@@ -62,6 +62,16 @@ const Help = () => {
           </form>
         </div>
       </section>
+      <Link to="/help-status" className="flex justify-center">
+        <div className="flex items-center gap-2 group cursor-pointer">
+          <span className="text-indigo-600 font-semibold text-lg transition group-hover:underline group-active:underline">
+            View Requests
+          </span>
+          <span className="text-indigo-600 text-xl transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2">
+            →
+          </span>
+        </div>
+      </Link>
     </div>
   );
 };
