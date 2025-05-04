@@ -65,7 +65,7 @@ const Recent = () => {
           Total Reports: {useReportStore((state) => state.reports.length) + 3}
         </p>
         <div className="grid gap-4">
-          {useReportStore((state) => state.reports).map((report, i) => (
+          {[...useReportStore((state) => state.reports)].reverse().map((report, i) => (
             <div
               key={i}
               onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
