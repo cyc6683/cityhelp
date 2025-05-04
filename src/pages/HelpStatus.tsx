@@ -181,7 +181,7 @@ const HelpStatus = () => {
               ))}
             </div>
             <button
-              onClick={() => navigate("/report")}
+              onClick={() => navigate("/help-status")}
               className="text-sm bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 active:scale-95 transition w-fit"
             >
               + Add Request
